@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`667c659`](https://github.com/stdlib-js/stdlib/commit/667c65918c2e46151a36f995f223d9017e58f7e0) - **test:** ensure simulated stdev matches \"known\" stdev _(by Athan Reines)_
 -   [`9e93136`](https://github.com/stdlib-js/stdlib/commit/9e93136c1006acbc7ab36daf496202e5ab059dd9) - **feat:** add `stats/base/ndarray/sztest` _(by Athan Reines)_
 
 </details>
