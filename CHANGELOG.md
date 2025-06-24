@@ -20,6 +20,7 @@
 
 ### Bug Fixes
 
+-   [`30b331e`](https://github.com/stdlib-js/stdlib/commit/30b331efe958bd5cab7e2bd51c45fcfa95f7c485) - use correct return value
 -   [`25a5630`](https://github.com/stdlib-js/stdlib/commit/25a56303f451e51ede40b37a041d6bbc7f67b7e7) - ensure support for minimal ndarray-like objects
 
 </section>
@@ -32,6 +33,7 @@
 
 <details>
 
+-   [`30b331e`](https://github.com/stdlib-js/stdlib/commit/30b331efe958bd5cab7e2bd51c45fcfa95f7c485) - **fix:** use correct return value _(by Athan Reines)_
 -   [`25a5630`](https://github.com/stdlib-js/stdlib/commit/25a56303f451e51ede40b37a041d6bbc7f67b7e7) - **fix:** ensure support for minimal ndarray-like objects _(by Athan Reines)_
 -   [`bfe91db`](https://github.com/stdlib-js/stdlib/commit/bfe91db9d29fed2630637a535b37a251b1904729) - **refactor:** use base ndarray utility _(by Athan Reines)_
 -   [`2c9a894`](https://github.com/stdlib-js/stdlib/commit/2c9a894c76a441b6343e0aad7984cb5d27152a48) - **docs:** provide missing options _(by Athan Reines)_
