@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-08-20)
+## Unreleased (2025-08-22)
 
 <section class="features">
 
@@ -27,12 +27,23 @@
 
 <!-- /.bug-fixes -->
 
+<section class="reverts">
+
+### Reverts
+
+-   [`168c7c1`](https://github.com/stdlib-js/stdlib/commit/168c7c18aa58007cf9d7785b9cde69e8e7157c21) - docs: fix example code
+
+</section>
+
+<!-- /.reverts -->
+
 <section class="commits">
 
 ### Commits
 
 <details>
 
+-   [`168c7c1`](https://github.com/stdlib-js/stdlib/commit/168c7c18aa58007cf9d7785b9cde69e8e7157c21) - **revert:** docs: fix example code _(by Philipp Burckhardt)_
 -   [`e4701e8`](https://github.com/stdlib-js/stdlib/commit/e4701e814ce9db206690ad9f2ce8b84e5a4f4e52) - **docs:** fix example code _(by Philipp Burckhardt)_
 -   [`30b331e`](https://github.com/stdlib-js/stdlib/commit/30b331efe958bd5cab7e2bd51c45fcfa95f7c485) - **fix:** use correct return value _(by Athan Reines)_
 -   [`25a5630`](https://github.com/stdlib-js/stdlib/commit/25a56303f451e51ede40b37a041d6bbc7f67b7e7) - **fix:** ensure support for minimal ndarray-like objects _(by Athan Reines)_
