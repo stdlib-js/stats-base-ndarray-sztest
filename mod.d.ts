@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,12 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float32ndarray, int8ndarray, ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute a one-sample Z-test for a one-dimensional single-precision floating-point ndarray.
+* Computes a one-sample Z-test for a one-dimensional single-precision floating-point ndarray.
 *
-* @module @stdlib/stats-base-ndarray-sztest
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a zero-dimensional output ndarray containing a results object.
+*     -   a zero-dimensional ndarray specifying the alternative hypothesis.
+*     -   a zero-dimensional ndarray specifying the significance level.
+*     -   a zero-dimensional ndarray specifying the mean under the null hypothesis.
+*     -   a zero-dimensional ndarray specifying the known standard deviation.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float32Results = require( '@stdlib/stats-base-ztest-one-sample-results-float32' );
@@ -30,7 +46,6 @@
 * var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
 * var ndarray = require( '@stdlib/ndarray-ctor' );
-* var sztest = require( '@stdlib/stats-base-ndarray-sztest' );
 *
 * var opts = {
 *     'dtype': 'float32'
@@ -63,12 +78,9 @@
 *
 * console.log( v.get().toString() );
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function sztest<T extends ndarray>( arrays: [ float32ndarray, T, int8ndarray, float32ndarray, float32ndarray, float32ndarray ] ): T;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = sztest;
