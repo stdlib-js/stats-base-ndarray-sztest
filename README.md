@@ -47,14 +47,32 @@ A Z-test commonly refers to a one-sample location test which compares the mean o
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-ndarray-sztest
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import sztest from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ndarray-sztest@deno/mod.js';
+var sztest = require( '@stdlib/stats-base-ndarray-sztest' );
 ```
 
 #### sztest( arrays )
@@ -62,25 +80,20 @@ import sztest from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ndarray-szt
 Computes a one-sample Z-test for a one-dimensional single-precision floating-point ndarray.
 
 ```javascript
-import Float32Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float32@deno/mod.js';
-import resolveEnum from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-alternative-resolve-enum@deno/mod.js';
-import structFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-struct-factory@deno/mod.js';
-import Float32Vector from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-vector-float32@deno/mod.js';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@deno/mod.js';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@deno/mod.js';
-
-var opts = {
-    'dtype': 'float32'
-};
+var Float32Results = require( '@stdlib/stats-base-ztest-one-sample-results-float32' );
+var resolveEnum = require( '@stdlib/stats-base-ztest-alternative-resolve-enum' );
+var structFactory = require( '@stdlib/array-struct-factory' );
+var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
+var Float32Tensor0D = require( '@stdlib/ndarray-tensor0d-float32' );
+var Int8Tensor0D = require( '@stdlib/ndarray-tensor0d-int8' );
+var ndarray = require( '@stdlib/ndarray-ctor' );
 
 var x = new Float32Vector( [ 1.0, 3.0, 4.0, 2.0 ] );
 
-var alt = scalar2ndarray( resolveEnum( 'two-sided' ), {
-    'dtype': 'int8'
-});
-var alpha = scalar2ndarray( 0.05, opts );
-var mu = scalar2ndarray( 0.0, opts );
-var sigma = scalar2ndarray( 1.0, opts );
+var alt = new Int8Tensor0D( resolveEnum( 'two-sided' ) );
+var alpha = new Float32Tensor0D( 0.05 );
+var mu = new Float32Tensor0D( 0.0 );
+var sigma = new Float32Tensor0D( 1.0 );
 
 var ResultsArray = structFactory( Float32Results );
 var out = new ndarray( Float32Results, new ResultsArray( 1 ), [], [ 0 ], 0, 'row-major' );
@@ -123,14 +136,15 @@ The function has the following parameters:
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import Float32Results from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-one-sample-results-float32@deno/mod.js';
-import resolveEnum from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ztest-alternative-resolve-enum@deno/mod.js';
-import structFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-struct-factory@deno/mod.js';
-import normal from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-normal@deno/mod.js';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@deno/mod.js';
-import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@deno/mod.js';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import sztest from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-ndarray-sztest@deno/mod.js';
+var Float32Results = require( '@stdlib/stats-base-ztest-one-sample-results-float32' );
+var resolveEnum = require( '@stdlib/stats-base-ztest-alternative-resolve-enum' );
+var structFactory = require( '@stdlib/array-struct-factory' );
+var normal = require( '@stdlib/random-normal' );
+var ndarray = require( '@stdlib/ndarray-ctor' );
+var Float32Tensor0D = require( '@stdlib/ndarray-tensor0d-float32' );
+var Int8Tensor0D = require( '@stdlib/ndarray-tensor0d-int8' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var sztest = require( '@stdlib/stats-base-ndarray-sztest' );
 
 var opts = {
     'dtype': 'float32'
@@ -141,18 +155,16 @@ var x = normal( [ 100 ], 0.0, 1.0, opts );
 console.log( ndarray2array( x ) );
 
 // Specify the alternative hypothesis:
-var alt = scalar2ndarray( resolveEnum( 'two-sided' ), {
-    'dtype': 'int8'
-});
+var alt = new Int8Tensor0D( resolveEnum( 'two-sided' ) );
 
 // Specify the significance level:
-var alpha = scalar2ndarray( 0.05, opts );
+var alpha = new Float32Tensor0D( 0.05 );
 
 // Specify the mean under the null hypothesis:
-var mu = scalar2ndarray( 0.0, opts );
+var mu = new Float32Tensor0D( 0.0 );
 
 // Specify the known standard deviation:
-var sigma = scalar2ndarray( 1.0, opts );
+var sigma = new Float32Tensor0D( 1.0 );
 
 // Create a zero-dimensional results ndarray:
 var ResultsArray = structFactory( Float32Results );
@@ -184,7 +196,7 @@ console.log( v.get().toString() );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -247,7 +259,7 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/stats-base-ndarray-sztest/main/LICENSE
 
-[@stdlib/stats/base/ztest/one-sample/results/float32]: https://github.com/stdlib-js/stats-base-ztest-one-sample-results-float32/tree/deno
+[@stdlib/stats/base/ztest/one-sample/results/float32]: https://github.com/stdlib-js/stats-base-ztest-one-sample-results-float32
 
 </section>
 
