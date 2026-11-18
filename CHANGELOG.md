@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-11-11)
+## Unreleased (2026-11-18)
 
 <section class="bug-fixes">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`7dc3084`](https://github.com/stdlib-js/stdlib/commit/7dc3084d1f20fcef006b8bdc306e7a0b3e6ee63b) - **docs:** use dedicated zero-dimensional tensor constructor in `stats/base/ndarray/sztest` [(#16691)](https://github.com/stdlib-js/stdlib/pull/16691) _(by Subham Mahapatra, Athan Reines)_
 -   [`dbaac4d`](https://github.com/stdlib-js/stdlib/commit/dbaac4d30875963b59dff855f0c29abaf16e66f8) - **fix:** update types for ndarray specifying the alternative hypothesis _(by Athan Reines)_
 -   [`dbe4c82`](https://github.com/stdlib-js/stdlib/commit/dbe4c820ea98330253b4054a5bc9b04b2293415b) - **docs:** propagate fixes to sibling packages [(#12677)](https://github.com/stdlib-js/stdlib/pull/12677) _(by Philipp Burckhardt, Athan Reines)_
 -   [`d8ccb19`](https://github.com/stdlib-js/stdlib/commit/d8ccb1958684245e2d0ec3f5b1a2a0315f0a9947) - **chore:** modernize examples and benchmarks _(by Athan Reines)_
@@ -37,11 +38,12 @@
 
 ### Contributors
 
-A total of 3 people contributed to this release. Thank you to the following contributors:
+A total of 4 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Karan Anand
 -   Philipp Burckhardt
+-   Subham Mahapatra
 
 </section>
 
